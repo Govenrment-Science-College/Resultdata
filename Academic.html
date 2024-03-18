@@ -6,6 +6,7 @@
     <title>Academic Result</title>
     <style>
         body {
+        background-color:silver;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -13,9 +14,10 @@
 
         .container {
             max-width: 600px;
-            margin: 40px ;
+            margin: 40px;
+            margin-top:100px;
             padding: 20px;
-            background-color: #e9f7fa;
+            background-color:#e9f7fa;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -24,7 +26,7 @@
             font-weight: bold;
         }
 
-        select, input[type="number"], input[type="submit"] {
+        select, input[type="text"], input[type="submit"] {
             width: 100%;
             padding: 10px;
             margin-bottom: 10px;
@@ -34,14 +36,14 @@
         }
 
         input[type="submit"] {
-            background-color:#007715 ;
+            background-color: #007bff;
             color: white;
             border: none;
             cursor: pointer;
         }
 
         input[type="submit"]:hover {
-            background-color: #00ae1f65;
+            background-color: #0056b3;
         }
 
         .error {
@@ -84,8 +86,8 @@
                 <!-- Add more options as needed -->
             </select>
 
-            <input type="number" id="idNumber" placeholder="Enter ID Number">
-           <input type="submit" value="Transcript" id="transcriptBtn" style="display: none;">
+            <input type="text" id="idNumber" placeholder="Enter ID Number">
+            <input type="submit" value="Submit">
             <div id="error" class="error"></div>
         </form>
     </div>
@@ -95,6 +97,10 @@
             var examLevel = document.getElementById('examLevel').value;
             var departmentLabel = document.getElementById('departmentLabel');
             var departmentSelect = document.getElementById('department');
+            var seasonLabel = document.getElementById('seasonLabel');
+            var seasonSelect = document.getElementById('season');
+            var examNameLabel = document.getElementById('examNameLabel');
+            var examNameSelect = document.getElementById('examName');
 
             if (examLevel === 'HSC') {
                 departmentLabel.style.display = 'block';
@@ -102,7 +108,10 @@
             } else {
                 departmentLabel.style.display = 'none';
                 departmentSelect.style.display = 'none';
-                document.getElementById('transcriptBtn').style.display = 'none';
+                seasonLabel.style.display = 'none';
+                seasonSelect.style.display = 'none';
+                examNameLabel.style.display = 'none';
+                examNameSelect.style.display = 'none';
             }
         }
 
@@ -117,7 +126,6 @@
             } else {
                 seasonLabel.style.display = 'none';
                 seasonSelect.style.display = 'none';
-                document.getElementById('transcriptBtn').style.display = 'none';
             }
         }
 
@@ -129,14 +137,7 @@
         }
 
         function handleExamName() {
-            var examName = document.getElementById('examName').value;
-            var idNumber = document.getElementById('idNumber').value;
-            var transcriptBtn = document.getElementById('transcriptBtn');
-            if (examName && idNumber) {
-                transcriptBtn.style.display = 'block';
-            } else {
-                transcriptBtn.style.display = 'block';
-            }
+            // Nothing to handle here
         }
 
         function validateForm() {
@@ -150,22 +151,18 @@
             if (!examLevel || (examLevel === 'HSC' && !department) || (department === 'HSC-Science' && !season) || !examName || !idNumber) {
                 errorDiv.innerText = 'Please fill out all fields.';
                 return false;
-            } else if (!validateIdNumber(idNumber)) {
-                errorDiv.innerText = 'Invalid ID number.';
-                return false;
             } else {
-                errorDiv.innerText = '';
-                // Redirect to result page
-                // window.location.href = 'result.html'; // Uncomment this line to redirect
-                return false; // Prevent form submission for demonstration
+                var idNumberInt = parseInt(idNumber);
+                if (idNumberInt >= 1202223010001 && idNumberInt <= 12022230101311) {
+                    errorDiv.innerText = '';
+                    // Redirect to next page
+                    window.location.href = 'result.html';
+                    return true;
+                } else {
+                    errorDiv.innerText = 'Invalid ID number.';
+                    return false;
+                }
             }
-        }
-
-        function validateIdNumber(idNumber) {
-            // Convert ID number to integer
-            var id = parseInt(idNumber);
-            // Check if id is within the valid range
-            return (id >= 12022231010001 && id <= 12022231011311);
         }
     </script>
 </body>
