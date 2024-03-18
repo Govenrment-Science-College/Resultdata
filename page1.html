@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color:#e9f7fa;
+            color:black ;
+        }
+
+        .logout-btn {
+            background-color: #e9f7fa;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            padding: 20px;
+        }
+
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            padding: 14px 20px;
+            margin: 10px;
+            background-color:white;
+            color:black;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="background-color:#e9f7fa;">
+    <div class="header">
+        <div>
+            <img src="https://gsctd.eshiksaems.com/image/dclogo.png" alt="Left Logo" height="130">
+            <span>Education Management System</span>
+        </div>
+        <div>
+            <img src="https://gsctd.eshiksaems.com/image/eShiksa_logo.png" alt="Right Logo" height="50">
+            <button class="logout-btn" onclick="logout()">Log Out</button>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="button-container">
+            <button class="button" onclick="openPage('Academic.html')">Academic Result</button>
+            <button class="button" onclick="openPage('class_schedule.html')">Class & Exam Schedule</button>
+            <button class="button" onclick="openPage('attendance.html')">Attendance</button>
+            <button class="button" onclick="openPage('admission.html')">Admission</button>
+            <button class="button" onclick="openPage('admit_card.html')">Admit Card</button>
+            <button class="button" onclick="openPage('receipts_print.html')">Receipts Print</button>
+            <button class="button" onclick="openPage('notice_board.html')">Notice Board</button>
+            <button class="button" onclick="openPage('profile.html')">Profile</button>
+            <button class="button" onclick="openPage('improvement_form.html')">Improvement Form Fill-up</button>
+            <button class="button" onclick="openPage('application_form.html')">Application Form Reprint</button>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            // Perform logout action
+            alert('Logged out successfully.');
+            // Redirect to login page or perform other actions as needed
+        }
+
+        function openPage(pageUrl) {
+            window.location.href = pageUrl;
+        }
+    </script>
+</body>
+</html>

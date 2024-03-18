@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        
+        #loginContainer {
+        
+            background-color: white;
+            margin:20px;
+            border:5px;
+            border-radius: 7px;
+            box-shadow: 0px 0px 10px
+            rgba(0, 0, 0, 0.1);
+            height:500px;
+        }
+        
+        #logo {
+            display: block;
+            margin: 18px auto 20px;
+            border-radius: %;
+            
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #1f6db8;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #1393e9be;
+        }
+        
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+        p{
+         
+         font-size:20px;
+           color:#1f6db8;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="loginContainer">
+        <img id="logo" src="https://gsctd.eshiksaems.com/image/dclogo.png" alt="Logo" width="200px" height="224"> <p align="center">Login to Ems</p><center>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <input type="text" id="username" placeholder="User Name" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="submit" value="Sign In">
+        </form>
+        <div id="error" class="error"></div></center>
+    </div>
+
+    <script>
+        function validateLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            if (username === 'Gsctdstudent' && password === 'gsctdstudent') {
+                // Redirect to next page or perform desired action
+                window.location.href = 'page1.html';
+                return false; // Prevent form submission
+            } else {
+                document.getElementById('error').innerText = 'Invalid username or password';
+                return false; // Prevent form submission
+            }
+        }
+    </script>
+</body>
+</html>
