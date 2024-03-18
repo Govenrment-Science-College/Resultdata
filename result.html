@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Result Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #fff;
+        margin-top: 30px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: cente;
+        height: 200px;
+    }
+    
+    form {
+        background-color:#e9f7fa;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+        font-weight: bold;
+    }
+    
+    input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    button {
+        background-color: #00913e;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        background-color: #45a049;
+    }
+    
+    #result {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+</style>
+<script>
+    function validateRoll() {
+        var rollNo = document.getElementById("rollNo").value;
+        if (rollNo >= 1 && rollNo <= 1311) {
+     
+      if (rollNo == 410) {
+                window.location.href = "410.html";
+            }
+            
+            
+    if (rollNo == 427) {
+                window.location.href = "427.html";
+            }
+            
+              if (rollNo == 428) {
+                window.location.href = "428.html";
+            }
+            
+            
+       if (rollNo == 429) {
+                window.location.href = "429.html";
+            }
+            
+             
+        if (rollNo == 430) {
+                window.location.href = "430.html";
+            }
+            
+            
+            if (rollNo == 431) {
+                window.location.href = "431.html";
+            }
+            
+            if (rollNo == 432) {
+                window.location.href = "432.html";
+            }
+            
+            
+            if (rollNo == 433) {
+                window.location.href = "433.html";
+            }
+            
+            
+            if (rollNo == 434) {
+                window.location.href = "434.html";
+            }
+            
+            
+            if (rollNo == 435) {
+                window.location.href = "435.html";
+            }
+            
+            
+            
+            if (rollNo == 436) {
+                window.location.href = "436.html";
+            }
+            
+            
+            
+            if (rollNo == 437) {
+                window.location.href = "437.html";
+            }
+            
+            
+            if (rollNo == 438) {
+                window.location.href = "438.html";
+            }
+            
+            
+            if (rollNo == 440) {
+                window.location.href = "440.html";
+            }
+            
+            
+            
+            if (rollNo == 480) {
+                window.location.href = "480.html";
+            }
+            
+            
+            if (rollNo == 479) {
+                window.location.href = "479.html";
+            }
+            
+            
+            
+            if (rollNo == 481) {
+                window.location.href = "481.html";
+            }
+            
+             
+        } else {
+            document.getElementById("result").innerHTML = "Invalid Roll No";
+        }
+    }
+</script>
+</head>
+<body>
+    <form>
+        <label for="rollNo">Enter Class Roll</label>
+        <input type="number" id="rollNo" name="rollNo" min="1" max="9999" required>
+     <center>   <button type="button" onclick="validateRoll()">check result</button></center>
+    </form>
+    <div id="result"></div>
+</body>
+</html>
